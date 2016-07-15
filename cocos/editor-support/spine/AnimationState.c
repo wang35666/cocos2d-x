@@ -269,7 +269,7 @@ spTrackEntry* spAnimationState_setAnimationByName (spAnimationState* self, int t
 
 spTrackEntry* spAnimationState_setAnimation (spAnimationState* self, int trackIndex, spAnimation* animation, int/*bool*/loop) {
 	_spAnimationState* internal = SUB_CAST(_spAnimationState, self);
-
+	    
 	spTrackEntry* entry;
 	spTrackEntry* current = _spAnimationState_expandToIndex(self, trackIndex);
 	if (current) _spAnimationState_disposeAllEntries(self, current->next);

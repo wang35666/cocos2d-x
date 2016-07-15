@@ -1968,6 +1968,9 @@
     <ClCompile Include="..\vr\CCVRGenericRenderer.cpp">
       <Filter>vr</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\extensions\assets-manager\FileDownloader.cpp">
+      <Filter>extension</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\physics\CCPhysicsBody.h">
@@ -3844,6 +3847,9 @@
     </ClInclude>
     <ClInclude Include="..\vr\CCVRGenericRenderer.h">
       <Filter>vr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\extensions\assets-manager\FileDownloader.h">
+      <Filter>extension</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

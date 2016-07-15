@@ -9,6 +9,8 @@
 #endif
 #include "TableViewTest/TableViewTestScene.h"
 
+#include "DownloaderTest/DownloaderTest.h"
+
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS) || (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 #include "NetworkTest/WebSocketTest.h"
 #include "NetworkTest/SocketIOTest.h"
@@ -28,4 +30,6 @@ ExtensionsTests::ExtensionsTests()
     addTest("SocketIOTest", [](){ return new (std::nothrow) SocketIOTests; });
 #endif
     addTest("TableViewTest", [](){ return new (std::nothrow) TableViewTests; });
+
+	addTest("DownloaderTest", [](){ return new (std::nothrow) DownloaderTests; });
 }
