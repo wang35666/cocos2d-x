@@ -11,7 +11,18 @@ int WINAPI _tWinMain(HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
 
-    // create the application instance
-    AppDelegate app;
-    return Application::getInstance()->run();
+#ifdef USE_WIN32_CONSOLE
+	AllocConsole();
+	freopen("CONIN$", "r", stdin);
+	freopen("CONOUT$", "w", stdout);
+	freopen("CONOUT$", "w", stderr);
+#endif
+
+	// create the application instance
+	AppDelegate app;
+	int ret = Application::getInstance()->run();
+
+#ifdef USE_WIN32_CONSOLE
+	FreeConsole();
+#endif
 }

@@ -23,6 +23,7 @@
  ****************************************************************************/
 
 #include "FileDownloader.h"
+#include "base/CCConsole.h"
 #include "platform/CCPlatformMacros.h"
 #include "unzip.h"
 
@@ -50,6 +51,8 @@ static int progressFunc(void *ptr, double totalToDownload, double nowDownloaded,
 
 NS_CC_EXT_BEGIN
 
+using namespace cocos2d;
+
 FileDownloader::FileDownloader()
 {
 }
@@ -71,12 +74,13 @@ int FileDownloader::download(const std::string& url)
 	std::string outFileName = "d:/update.zip";
 	FILE *fp = fopen(outFileName.c_str(), "wb");
 	if (NULL == fp) {
+		CCLOG("file create failed ");
 		return -1;
 	}
 
 	void* _curl = curl_easy_init();
 	if (NULL == _curl) {
-		//CCLOG("performDownload(): curl easy init failed ");
+		CCLOG("performDownload(): curl easy init failed ");
 		return -3;
 	}
 
