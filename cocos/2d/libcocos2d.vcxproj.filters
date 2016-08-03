@@ -289,6 +289,12 @@
     <Filter Include="vr">
       <UniqueIdentifier>{5cbd879f-02ae-4f28-af33-2c4f980dd6f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="lframework">
+      <UniqueIdentifier>{89558335-8656-4519-a457-69bed0a51f4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="l3d">
+      <UniqueIdentifier>{9dcf3d22-fee6-4cf9-8bad-4f4d90c3b50f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\physics\CCPhysicsBody.cpp">
@@ -1970,6 +1976,9 @@
     </ClCompile>
     <ClCompile Include="..\..\extensions\assets-manager\FileDownloader.cpp">
       <Filter>extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lframework\LVarSystem.cpp">
+      <Filter>lframework</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -3850,6 +3859,9 @@
     </ClInclude>
     <ClInclude Include="..\..\extensions\assets-manager\FileDownloader.h">
       <Filter>extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lframework\LVarSystem.h">
+      <Filter>lframework</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
