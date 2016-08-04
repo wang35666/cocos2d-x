@@ -1,45 +1,58 @@
-#include "VarSystem.h"
+#include "LVarSystem.h"
 
-static VarSystem local;
-VarSystem* varSystem = &local;
+NS_CC_BEGIN
 
-Var::Var()
+static LVarSystem local;
+LVarSystem* varSystem = &local;
+
+LVar::LVar()
 {
-	varSystem->Regster(this);
+	varSystem->regsiter(this);
 }
 
-Var::~Var()
+LVar::~LVar()
 {
-
+	varSystem->unRegister(this);
 }
 
-int Var::GetInt()
+int LVar::getInt()
 {
 	return 0;
 }
 
-bool Var::GetBool()
+bool LVar::getBool()
 {
 	return 1;
 }
 
-VarSystem::VarSystem()
+LVarSystem::LVarSystem()
 {
 
 }
 
-VarSystem::~VarSystem()
+LVarSystem::~LVarSystem()
 {
 
 }
 
-bool VarSystem::Init()
+bool LVarSystem::init()
 {
 	return false;
 }
 
-bool VarSystem::Regster(Var* var)
+bool LVarSystem::regsiter(LVar* var)
 {
 	list.push_back(var);
 	return true;
 }
+
+bool cocos2d::LVarSystem::unRegister(LVar* var)
+{
+	auto varIter = std::find(list.begin(), list.end(), var);
+	if (varIter != list.end())
+		list.erase(varIter);
+
+	return true;
+}
+
+NS_CC_END

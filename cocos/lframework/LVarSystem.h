@@ -2,38 +2,45 @@
 #define __LVARSYSTEM_H__
 
 #include <string>
+#include <vector>
 #include "base/ccCArray.h"
 
-class Var
+NS_CC_BEGIN
+
+class LVar
 {
 public:
-	Var();
-	~Var();
+	LVar();
+	~LVar();
 
-	int GetInt();
-	bool GetBool();
+	int getInt();
+	bool getBool();
 
 private:
 	std::string value;
 };
 
 
-class VarSystem
+
+class LVarSystem
 {
 public:
-	VarSystem();
-	~VarSystem();
+	LVarSystem();
+	~LVarSystem();
 
-	bool Init();
+	bool init();
 
-	bool Regster(Var* var);
+	bool regsiter(LVar* var);
+	bool unRegister(LVar* var);
 
 private:
 
-	Array<Var*> list;
+	std::vector<LVar*> list;
 };
 
-extern VarSystem* varSystem;
+extern LVarSystem* varSystem;
+
+NS_CC_END
 
 #endif // !__SCRIPTSYSTEM_H__
 
