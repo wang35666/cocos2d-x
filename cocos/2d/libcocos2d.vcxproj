@@ -566,6 +566,11 @@ xcopy /Y /Q "$(ProjectDir)..\..\external\chipmunk\prebuilt\win32\release-lib\*.*
     <ClCompile Include="..\editor-support\cocostudio\WidgetReader\UserCameraReader\UserCameraReader.cpp" />
     <ClCompile Include="..\editor-support\cocostudio\WidgetReader\Particle3DReader\Particle3DReader.cpp" />
     <ClCompile Include="..\editor-support\cocostudio\WidgetReader\WidgetReader.cpp" />
+    <ClCompile Include="..\l3d\LJoint.cpp" />
+    <ClCompile Include="..\l3d\LModel.cpp" />
+    <ClCompile Include="..\l3d\LModelLoader.cpp" />
+    <ClCompile Include="..\l3d\LSprite3D.cpp" />
+    <ClCompile Include="..\l3d\LSurface.cpp" />
     <ClCompile Include="..\lframework\LVarSystem.cpp" />
     <ClCompile Include="..\math\CCAffineTransform.cpp" />
     <ClCompile Include="..\math\CCGeometry.cpp" />
@@ -1183,6 +1188,11 @@ xcopy /Y /Q "$(ProjectDir)..\..\external\chipmunk\prebuilt\win32\release-lib\*.*
     <ClInclude Include="..\editor-support\cocostudio\WidgetReader\Particle3DReader\Particle3DReader.h" />
     <ClInclude Include="..\editor-support\cocostudio\WidgetReader\WidgetReader.h" />
     <ClInclude Include="..\editor-support\cocostudio\WidgetReader\WidgetReaderProtocol.h" />
+    <ClInclude Include="..\l3d\LJoint.h" />
+    <ClInclude Include="..\l3d\LModel.h" />
+    <ClInclude Include="..\l3d\LModelLoder.h" />
+    <ClInclude Include="..\l3d\LSprite3D.h" />
+    <ClInclude Include="..\l3d\LSurface.h" />
     <ClInclude Include="..\lframework\LVarSystem.h" />
     <ClInclude Include="..\math\CCAffineTransform.h" />
     <ClInclude Include="..\math\CCGeometry.h" />

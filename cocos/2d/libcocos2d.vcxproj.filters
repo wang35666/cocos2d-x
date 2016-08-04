@@ -1980,6 +1980,21 @@
     <ClCompile Include="..\lframework\LVarSystem.cpp">
       <Filter>lframework</Filter>
     </ClCompile>
+    <ClCompile Include="..\l3d\LSprite3D.cpp">
+      <Filter>l3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\l3d\LModel.cpp">
+      <Filter>l3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\l3d\LModelLoader.cpp">
+      <Filter>l3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\l3d\LSurface.cpp">
+      <Filter>l3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\l3d\LJoint.cpp">
+      <Filter>l3d</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\physics\CCPhysicsBody.h">
@@ -3862,6 +3877,21 @@
     </ClInclude>
     <ClInclude Include="..\lframework\LVarSystem.h">
       <Filter>lframework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\l3d\LSprite3D.h">
+      <Filter>l3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\l3d\LModel.h">
+      <Filter>l3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\l3d\LModelLoder.h">
+      <Filter>l3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\l3d\LSurface.h">
+      <Filter>l3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\l3d\LJoint.h">
+      <Filter>l3d</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
