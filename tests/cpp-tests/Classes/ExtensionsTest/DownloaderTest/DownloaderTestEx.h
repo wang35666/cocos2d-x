@@ -4,7 +4,7 @@
 #include "extensions/cocos-ext.h"
 #include "../../BaseTest.h"
 
-DEFINE_TEST_SUITE(DownloaderTests);
+DEFINE_TEST_SUITE(DownloaderExTests);
 
 class DownloaderScene : public TestCase
 {

@@ -93,4 +93,6 @@
 #include "ZwoptexTest/ZwoptexTest.h"
 #include "SpriteFrameCacheTest/SpriteFrameCacheTest.h"
 
+#include "L3DTest/L3DTest.h"
+
 #endif

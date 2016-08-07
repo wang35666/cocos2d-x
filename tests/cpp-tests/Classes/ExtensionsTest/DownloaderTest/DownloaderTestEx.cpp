@@ -1,4 +1,4 @@
-#include "DownloaderTest.h"
+#include "DownloaderTestEx.h"
 #include "../../testResource.h"
 #include "cocos2d.h"
 #include "extensions/assets-manager/FileDownloader.h"
@@ -6,7 +6,7 @@
 USING_NS_CC;
 USING_NS_CC_EXT;
 
-DownloaderTests::DownloaderTests()
+DownloaderExTests::DownloaderExTests()
 {
 	addTestCase("DownloaderTests", [](){ return DownloaderScene::create(); });
 }

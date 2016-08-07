@@ -28,7 +28,7 @@ struct RotationKey
 	float frame;
 };
 
-class LJoint
+class CC_DLL LJoint
 {
 public:
 	LJoint();

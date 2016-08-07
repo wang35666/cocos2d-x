@@ -295,6 +295,9 @@
     <Filter Include="Classes\ExtensionsTest\DownloaderTest">
       <UniqueIdentifier>{87d1bfeb-3e5d-4238-8819-0a90d70bc8ed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\L3DTEest">
+      <UniqueIdentifier>{e48a2ff7-2f50-4d3a-b9f3-f4d8c6ec0efe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -696,7 +699,10 @@
     <ClCompile Include="..\Classes\VRTest\VRTest.cpp">
       <Filter>Classes\VRTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ExtensionsTest\DownloaderTest\DownloaderTest.cpp">
+    <ClCompile Include="..\Classes\L3DTest\L3DTest.cpp">
+      <Filter>Classes\L3DTEest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ExtensionsTest\DownloaderTest\DownloaderTestEx.cpp">
       <Filter>Classes\ExtensionsTest\DownloaderTest</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1294,7 +1300,10 @@
     <ClInclude Include="..\Classes\VRTest\VRTest.h">
       <Filter>Classes\VRTests</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ExtensionsTest\DownloaderTest\DownloaderTest.h">
+    <ClInclude Include="..\Classes\L3DTest\L3DTest.h">
+      <Filter>Classes\L3DTEest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ExtensionsTest\DownloaderTest\DownloaderTestEx.h">
       <Filter>Classes\ExtensionsTest\DownloaderTest</Filter>
     </ClInclude>
   </ItemGroup>

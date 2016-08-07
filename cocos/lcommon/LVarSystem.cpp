@@ -5,7 +5,7 @@ NS_CC_BEGIN
 static LVarSystem local;
 LVarSystem* varSystem = &local;
 
-LVar::LVar()
+LVar::LVar(const char *name, const char *value, int flags, const char *description)
 {
 	varSystem->regsiter(this);
 }
@@ -22,7 +22,7 @@ int LVar::getInt()
 
 bool LVar::getBool()
 {
-	return 1;
+	return true;
 }
 
 LVarSystem::LVarSystem()

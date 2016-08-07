@@ -103,6 +103,7 @@ public:
         addTest("VR Test", []() { return new VRTests(); });
         addTest("Zwoptex", []() { return new ZwoptexTests(); });
         addTest("SpriteFrameCache", []() { return new SpriteFrameCacheTests(); });
+		addTest("L3D Test", []() { return new L3DTest(); });
     }
 };
 

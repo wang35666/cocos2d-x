@@ -10,7 +10,15 @@ NS_CC_BEGIN
 class LVar
 {
 public:
-	LVar();
+	LVar() = delete;
+
+	//// Always use one of the following constructors.
+	LVar(const char *name, const char *value, int flags, const char *description);
+	//idCVar(const char *name, const char *value, int flags, const char *description,
+	//	float valueMin, float valueMax, argCompletion_t valueCompletion = NULL);
+	//idCVar(const char *name, const char *value, int flags, const char *description,
+	//	const char **valueStrings, argCompletion_t valueCompletion = NULL)
+
 	~LVar();
 
 	int getInt();

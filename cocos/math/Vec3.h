@@ -479,6 +479,14 @@ public:
      */
     inline bool operator!=(const Vec3& v) const;
     
+	inline float operator[](const int index) const {
+		return (&x)[index];
+	}
+	
+	inline float& operator[](const int index) {
+		return (&x)[index];
+	}
+
     /** equals to Vec3(0,0,0) */
     static const Vec3 ZERO;
     /** equals to Vec3(1,1,1) */

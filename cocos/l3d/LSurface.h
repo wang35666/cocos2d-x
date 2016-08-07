@@ -1,13 +1,16 @@
 #ifndef __LSURFACE_H__
 #define __LSURFACE_H__
 
-#include <Vec3.h>
+#include "math/Vec2.h"
+#include "math/Vec3.h"
+
+typedef unsigned short glIndex_t;
 
 NS_CC_BEGIN
 
-#define glIndex_t unsigned short;
 
-class LDrawVert {
+class CC_DLL LDrawVert
+{
 public:
 	LDrawVert() {
 		Clear();
@@ -33,10 +36,16 @@ inline void LDrawVert::Clear()
 	color[3] = 1.0;
 }
 
-
-class LSurface
+class CC_DLL LSurface
 {
 public:
+	static LSurface* Create();
+
+	LSurface(){}
+	~LSurface() {}
+	
+	void AllocSurfVerts(int num);
+
 	Vec3* basePoses;
 
 	int	numVerts;
@@ -45,30 +54,37 @@ public:
 	int	numIndices;
 	glIndex_t* indices;
 
-	glIndex_t *	silIndices;
+	glIndex_t*	silIndices;
 	
 	// edges
 	bool pickUp;
 	int numSilEdges;
 
 	// vbo
-	GLuint vbo[2];
+	//GLuint vbo[2];
 
 	// pick
 	int numPickIndices;
 	glIndex_t* pickIndices;
 
-	//
+	// draw
 	glIndex_t drawBegin;
 	glIndex_t drawCount;
 
-	//
+	// 
 	bool generateNormals;
 	bool tangentsCalculated;
 	bool facePlanesCalculated;
 	bool perfectHull;
 	bool calcShadow;
 	bool bDrawSingleEdge;
+
+public:
+	void DeriveNormals();
+
+	void BoundTriSurf();
+
+	void CreateSilIndice();
 };
 
 NS_CC_END

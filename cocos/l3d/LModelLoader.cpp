@@ -11,9 +11,8 @@ public:
 
 private:
 
-
-
 	std::string _name;
+
 	int _numFrames;
 };
 

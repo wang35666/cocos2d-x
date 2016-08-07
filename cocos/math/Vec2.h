@@ -451,6 +451,14 @@ public:
      */
     inline bool operator!=(const Vec2& v) const;
 
+	inline float operator[](const int index) const {
+		return (&x)[index];
+	}
+
+	inline float& operator[](const int index) {
+		return (&x)[index];
+	}
+
     //code added compatible for Point
 public:
       /**

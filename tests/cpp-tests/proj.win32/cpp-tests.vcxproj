@@ -64,7 +64,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LibraryPath>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
-    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
+    <PreBuildEventUseInBuild>true</PreBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LibraryPath>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
@@ -170,7 +170,7 @@ xcopy "$(OutDir)..\*.dll" "$(OutDir)" /D /Y</Command>
     <ClCompile Include="..\Classes\ExtensionsTest\CocosBuilderTest\TimelineCallbackTest\TimelineCallbackTestLayer.cpp" />
     <ClCompile Include="..\Classes\ExtensionsTest\ControlExtensionTest\CCControlPotentiometerTest\CCControlPotentiometerTest.cpp" />
     <ClCompile Include="..\Classes\ExtensionsTest\ControlExtensionTest\CCControlStepperTest\CCControlStepperTest.cpp" />
-    <ClCompile Include="..\Classes\ExtensionsTest\DownloaderTest\DownloaderTest.cpp" />
+    <ClCompile Include="..\Classes\ExtensionsTest\DownloaderTest\DownloaderTestEx.cpp" />
     <ClCompile Include="..\Classes\ExtensionsTest\NetworkTest\HttpClientTest.cpp" />
     <ClCompile Include="..\Classes\ExtensionsTest\NetworkTest\SocketIOTest.cpp" />
     <ClCompile Include="..\Classes\ExtensionsTest\NetworkTest\WebSocketTest.cpp" />
@@ -178,6 +178,7 @@ xcopy "$(OutDir)..\*.dll" "$(OutDir)" /D /Y</Command>
     <ClCompile Include="..\Classes\ExtensionsTest\TableViewTest\TableViewTestScene.cpp" />
     <ClCompile Include="..\Classes\FileUtilsTest\FileUtilsTest.cpp" />
     <ClCompile Include="..\Classes\InputTest\MouseTest.cpp" />
+    <ClCompile Include="..\Classes\L3DTest\L3DTest.cpp" />
     <ClCompile Include="..\Classes\LabelTest\LabelTestNew.cpp" />
     <ClCompile Include="..\Classes\LightTest\LightTest.cpp" />
     <ClCompile Include="..\Classes\MaterialSystemTest\MaterialSystemTest.cpp" />
@@ -329,7 +330,7 @@ xcopy "$(OutDir)..\*.dll" "$(OutDir)" /D /Y</Command>
     <ClInclude Include="..\Classes\ExtensionsTest\CocosBuilderTest\TimelineCallbackTest\TimelineCallbackTestLayer.h" />
     <ClInclude Include="..\Classes\ExtensionsTest\ControlExtensionTest\CCControlPotentiometerTest\CCControlPotentiometerTest.h" />
     <ClInclude Include="..\Classes\ExtensionsTest\ControlExtensionTest\CCControlStepperTest\CCControlStepperTest.h" />
-    <ClInclude Include="..\Classes\ExtensionsTest\DownloaderTest\DownloaderTest.h" />
+    <ClInclude Include="..\Classes\ExtensionsTest\DownloaderTest\DownloaderTestEx.h" />
     <ClInclude Include="..\Classes\ExtensionsTest\NetworkTest\HttpClientTest.h" />
     <ClInclude Include="..\Classes\ExtensionsTest\NetworkTest\SocketIOTest.h" />
     <ClInclude Include="..\Classes\ExtensionsTest\NetworkTest\WebSocketTest.h" />
@@ -337,6 +338,7 @@ xcopy "$(OutDir)..\*.dll" "$(OutDir)" /D /Y</Command>
     <ClInclude Include="..\Classes\ExtensionsTest\TableViewTest\TableViewTestScene.h" />
     <ClInclude Include="..\Classes\FileUtilsTest\FileUtilsTest.h" />
     <ClInclude Include="..\Classes\InputTest\MouseTest.h" />
+    <ClInclude Include="..\Classes\L3DTest\L3DTest.h" />
     <ClInclude Include="..\Classes\LabelTest\LabelTestNew.h" />
     <ClInclude Include="..\Classes\LightTest\LightTest.h" />
     <ClInclude Include="..\Classes\MaterialSystemTest\MaterialSystemTest.h" />
