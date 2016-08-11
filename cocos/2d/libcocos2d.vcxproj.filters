@@ -1998,6 +1998,9 @@
     <ClCompile Include="..\l3d\LSprite3D.cpp">
       <Filter>l3d</Filter>
     </ClCompile>
+    <ClCompile Include="..\l3d\LMaterial.cpp">
+      <Filter>l3d</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\physics\CCPhysicsBody.h">
@@ -3897,6 +3900,9 @@
       <Filter>lcommon</Filter>
     </ClInclude>
     <ClInclude Include="..\l3d\LSprite3D.h">
+      <Filter>l3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\l3d\LMaterial.h">
       <Filter>l3d</Filter>
     </ClInclude>
   </ItemGroup>

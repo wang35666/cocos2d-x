@@ -3,6 +3,7 @@
 
 #include "math/Vec2.h"
 #include "math/Vec3.h"
+#include "platform/CCGL.h"
 
 typedef unsigned short glIndex_t;
 
@@ -61,7 +62,7 @@ public:
 	int numSilEdges;
 
 	// vbo
-	//GLuint vbo[2];
+	GLuint vbo[2];
 
 	// pick
 	int numPickIndices;

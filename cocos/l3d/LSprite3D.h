@@ -8,12 +8,17 @@
 #include "2d/CCNode.h"
 #include "platform/CCPlatformMacros.h"
 
+#include "renderer/CCCustomCommand.h"
+#include "renderer/CCMeshCommand.h"
+
 NS_CC_BEGIN
 
 class LModel;
 class Texture2D;
 class GLProgram;
 class GLProgramState;
+class MeshCommand;
+class CustomCommand;
 
 class CC_DLL LSprite3D : public Node, public BlendProtocol
 {
@@ -30,7 +35,7 @@ public:
 	virtual void setBlendFunc(const BlendFunc &blendFunc) override;
 	virtual const BlendFunc &getBlendFunc() const override;
 
-	virtual void setGLProgramState(GLProgramState *glProgramState) override;
+	//	virtual void setGLProgramState(GLProgramState *glProgramState) override;
 	virtual void setGLProgram(GLProgram *glprogram) override;
 
 	//const AABB& getAABB() const;
@@ -56,17 +61,18 @@ CC_CONSTRUCTOR_ACCESS:
 	virtual void onDraw(const Mat4 &transform, uint32_t flags);
 
 protected:
-	LModel _model;
+	LModel*						_model;
 
-	BlendFunc                  _blend;
+	BlendFunc					_blend;
 
-	std::vector<LModel*>       _meshes;
+	std::vector<LModel*>		_meshes;
 
-	Texture2D _texture;
+	Texture2D*					_texture;
 
-	CustomCommand _customCommand;  
+	CustomCommand				_customCommand;  
 
-	MeshCommand _meshCommand;
+	MeshCommand					_meshCommand;
+
 };
 
 NS_CC_END
