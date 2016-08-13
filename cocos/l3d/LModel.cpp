@@ -80,6 +80,9 @@ void LModel::BuildDeformInfo()
 		 //	R_BoundTriSurf(_surfaces[i]);
 		 //	R_CreateSilIndice(_surfaces[i]);
 		 //	R_IdentifySilEdges(_surfaces[i])
+
+		_surfaces[i]->GenVBO();
+	
 	}
 }
 

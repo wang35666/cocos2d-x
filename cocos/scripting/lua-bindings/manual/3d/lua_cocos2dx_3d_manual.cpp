@@ -29,6 +29,8 @@
 #include "3d/CCSprite3D.h"
 #include "3d/CCTerrain.h"
 
+#include "scripting/lua-bindings/auto/lua_cocos2dx_l3d_auto.hpp"
+
 extern int lua_cocos2dx_3d_Sprite3D_setBlendFunc(lua_State* L);
 
 CC_DEPRECATED_ATTRIBUTE int lua_cocos2dx_3d_Sprite3D_setBlendFunc01(lua_State* L)
@@ -2283,6 +2285,7 @@ int register_cocos3d_module(lua_State* L)
         register_all_cocos2dx_3d(L);
         register_all_cocos2dx_3d_manual(L);
         register_all_cocos3d_manual_class(L);
+		register_all_cocos2dx_l3d(L);
     }
     lua_pop(L, 1);
 

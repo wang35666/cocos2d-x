@@ -31,6 +31,7 @@ B3DLoaderTest::B3DLoaderTest()
 	//addChild(orc);
 
 	LSprite3D* sprite = LSprite3D::create("C:/program1/LightWorld/media/ninja.b3d");
+	sprite->setTexture("C:/program1/LightWorld/media/nskinbl.jpg");
 
 	addChild(sprite);
 }

@@ -61,13 +61,8 @@ bool LSprite3D::init()
 {
 	if (Node::init())
 	{
-		GLProgram *glProgram = GLProgramCache::getInstance()->getGLProgram(GLProgram::SHADER_3D_POSITION_TEXTURE);
-		if (glProgram)
-			setGLProgram(glProgram);
-
 		return true;
 	}
-
 
 	return false;
 }
@@ -140,6 +135,13 @@ bool LSprite3D::initWithFile(const std::string &path)
 	}
 
 	modelLoader.Load(fullpath.c_str());
+	_model = modelLoader.GetModel();
+	_model->BuildDeformInfo();
+
+	GLProgram *glProgram = GLProgramCache::getInstance()->getGLProgram(GLProgram::SHADER_3D_POSITION_TEXTURE);
+	if (glProgram)
+		setGLProgram(glProgram);
+
 	return true;
 }
 
@@ -198,13 +200,22 @@ void LSprite3D::onDraw(const Mat4 &transform, uint32_t flags)
 	auto glProgram = getGLProgram();
 	glProgram->use();
 
+	auto camera = Camera::getVisitingCamera();
+	//const Mat4& camWorldMat = camera->getNodeToWorldTransform();
+
+	float m[16]{ 1.299038, 0.000000, 0.000000, 0.000000, 0.000000, 1.244655, -0.695595, -0.695421,
+		0.000000, -1.204505, -0.718782, -0.718602, 0.000000, 0.000000, 42.950069, 43.139309 };
 	GL::enableVertexAttribs(GL::VERTEX_ATTRIB_FLAG_POSITION|GL::VERTEX_ATTRIB_FLAG_TEX_COORD);
-	glProgram->setUniformsForBuiltins(transform);
+	//glProgram->setUniformsForBuiltins(transform);
+
+	GLuint mvp = glProgram->getUniformLocation("CC_MVPMatrix");
+	glProgram->setUniformLocationWithMatrix4fv(mvp, &m[0], 1);
+
+	GLuint colorLocation = glProgram->getUniformLocation("u_color");
+	Color4F color(1, 1, 1, 1);
+	glProgram->setUniformLocationWith4fv(colorLocation, (GLfloat*)&color.r, 1);
 
 	GL::bindTexture2DN(0, _texture->getName());
-	//glUniform1i(_textureLocation, 0);
-
-	auto camera = Camera::getVisitingCamera();
 
 	LSurface* surf = _model->GetSurfaces(0);
 

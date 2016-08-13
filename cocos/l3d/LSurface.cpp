@@ -5,8 +5,12 @@ NS_CC_BEGIN
 LSurface* LSurface::Create()
 {
 	LSurface* surface = new LSurface;
-	memset(surface, 0, sizeof(LSurface));
 	return surface;
+}
+
+LSurface::LSurface() : numVerts(0), verts(nullptr), numIndices(0), indices(nullptr)
+{
+
 }
 
 void LSurface::DeriveNormals()
@@ -133,6 +137,30 @@ void LSurface::AllocSurfVerts(int num)
 
 	numVerts = num;
 	verts = new LDrawVert[num];
+}
+
+void LSurface::GenVBO()
+{
+	if (vbo[0] != 0)
+		glDeleteBuffers(1, &vbo[0]);
+
+	if (vbo[1] != 0)
+		glDeleteBuffers(1, &vbo[0]);
+
+	glGenBuffers(1, &vbo[0]);
+	glGenBuffers(1, &vbo[1]);
+
+	// Stick the data for the vertices into its VBO
+	glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(LDrawVert) * numVerts, verts, GL_STATIC_DRAW);
+
+	// Stick the data for the indices into its VBO
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vbo[1]);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(glIndex_t) * numIndices, indices, GL_STATIC_DRAW);
+
+	// Clear the VBO state
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
 NS_CC_END

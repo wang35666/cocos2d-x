@@ -42,7 +42,7 @@ class CC_DLL LSurface
 public:
 	static LSurface* Create();
 
-	LSurface(){}
+	LSurface();
 	~LSurface() {}
 	
 	void AllocSurfVerts(int num);
@@ -86,6 +86,8 @@ public:
 	void BoundTriSurf();
 
 	void CreateSilIndice();
+
+	void GenVBO();
 };
 
 NS_CC_END

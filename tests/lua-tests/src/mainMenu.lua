@@ -157,6 +157,7 @@ local _allTests = {
     { isSupported = true,  name = "XMLHttpRequestTest"     , create_func   =        XMLHttpRequestTestMain  },
     { isSupported = true,  name = "VibrateTest"            , create_func   =               VibrateTestMain  },
     { isSupported = true,  name = "ZwoptexTest"            , create_func   =               ZwoptexTestMain  }
+    { isSupported = true,  name = "L3dTest"                , create_func   =               L3dTestMain  }
 }
 
 local TESTS_COUNT = table.getn(_allTests)

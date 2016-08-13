@@ -52,6 +52,8 @@ end
 addSearchPath("res/", screenSize.height)
 addSearchPath("", screenSize.height)
 
+package.path = package.path ..';src\\?.lua'
+print(package.path)
 require "mainMenu"
 
 local scene = cc.Scene:create()
