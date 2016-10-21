@@ -305,6 +305,7 @@ THE SOFTWARE.
 #include "vr/CCVRGenericRenderer.h"
 
 #include "l3d/LSprite3D.h"
+#include "lcommon/LVarSystem.h"
 
 // Deprecated
 // All deprecated features are include inside deprecated/CCDeprecated.h.

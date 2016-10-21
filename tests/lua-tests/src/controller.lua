@@ -56,6 +56,8 @@ package.path = package.path ..';src\\?.lua'
 print(package.path)
 require "mainMenu"
 
+seta("use_debug_mvp", "1")
+
 local scene = cc.Scene:create()
 scene:addChild(CreateTestMenu())
 if cc.Director:getInstance():getRunningScene() then

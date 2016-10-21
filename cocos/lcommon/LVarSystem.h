@@ -7,7 +7,14 @@
 
 NS_CC_BEGIN
 
-class LVar
+typedef enum {
+	LVAR_BOOL		= 0,	
+	LVAR_INTEGER	= 1,	
+	LVAR_FLOAT		= 2,	
+	LVAR_STRING		= 4,
+} lvarFlags_t;
+
+class CC_DLL LVar
 {
 public:
 	LVar() = delete;
@@ -23,30 +30,45 @@ public:
 
 	int getInt();
 	bool getBool();
+	float getFloat();
+	void updateValue();
 
+	void set(const char* val);
+
+	friend class LVarSystem;
 private:
+	int integerValue;
+	bool boolValue;
+	float floatValue;
+
+	int flag;
+
+	std::string name;
 	std::string value;
 };
 
-
-
-class LVarSystem
+class CC_DLL LVarSystem
 {
-public:
+private:
 	LVarSystem();
+	LVarSystem(const LVarSystem& system);
+	LVarSystem & operator = (const LVarSystem &);
+
+public:
+	static LVarSystem& getInstance();
+
 	~LVarSystem();
 
 	bool init();
 
 	bool regsiter(LVar* var);
 	bool unRegister(LVar* var);
+	LVar* find(const char* name);
 
 private:
 
 	std::vector<LVar*> list;
 };
-
-extern LVarSystem* varSystem;
 
 NS_CC_END
 

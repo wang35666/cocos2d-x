@@ -26,6 +26,26 @@ void AppDelegate::initGLContextAttrs()
     GLView::setGLContextAttrs(glContextAttrs);
 }
 
+static int seta(lua_State* L)
+{
+	int argc = lua_gettop(L);
+	if (argc != 2)
+	{
+		luaL_error(L, "invalid params");
+		return 0;
+	}
+
+	const char* var = lua_tostring(L, 1);
+
+	LVar* var1 = LVarSystem::getInstance().find(var);
+	if (var1 != nullptr)
+	{
+		var1->set(lua_tostring(L, 2));
+	}
+	return 0;
+}
+
+
 bool AppDelegate::applicationDidFinishLaunching()
 {
     // register lua engine
@@ -39,6 +59,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     lua_State* L = stack->getLuaState();
     
     lua_module_register(L);
+
+	lua_register(L, "seta", seta);
 
     lua_getglobal(L, "_G");
     if (lua_istable(L,-1))//stack:...,_G,

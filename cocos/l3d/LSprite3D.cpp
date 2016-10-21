@@ -16,9 +16,11 @@
 #include "renderer/ccGLStateCache.h"
 
 #include "2d/CCCamera.h"
+#include "lcommon/LVarSystem.h"
 
 NS_CC_BEGIN
 
+static LVar use_debug_mvp("use_debug_mvp", "0", 1, "debug_mvp");
 LSprite3D* LSprite3D::create()
 {
 	auto sprite = new (std::nothrow) LSprite3D();
@@ -202,14 +204,19 @@ void LSprite3D::onDraw(const Mat4 &transform, uint32_t flags)
 
 	auto camera = Camera::getVisitingCamera();
 	//const Mat4& camWorldMat = camera->getNodeToWorldTransform();
-
-	float m[16]{ 1.299038, 0.000000, 0.000000, 0.000000, 0.000000, 1.244655, -0.695595, -0.695421,
+	
+	if (!use_debug_mvp.getBool())
+	{
+		glProgram->setUniformsForBuiltins(transform);
+	}
+	else
+	{
+		float m[16]{ 1.299038, 0.000000, 0.000000, 0.000000, 0.000000, 1.244655, -0.695595, -0.695421,
 		0.000000, -1.204505, -0.718782, -0.718602, 0.000000, 0.000000, 42.950069, 43.139309 };
-	GL::enableVertexAttribs(GL::VERTEX_ATTRIB_FLAG_POSITION|GL::VERTEX_ATTRIB_FLAG_TEX_COORD);
-	//glProgram->setUniformsForBuiltins(transform);
-
-	GLuint mvp = glProgram->getUniformLocation("CC_MVPMatrix");
-	glProgram->setUniformLocationWithMatrix4fv(mvp, &m[0], 1);
+		GL::enableVertexAttribs(GL::VERTEX_ATTRIB_FLAG_POSITION|GL::VERTEX_ATTRIB_FLAG_TEX_COORD);
+		GLuint mvp = glProgram->getUniformLocation("CC_MVPMatrix");
+		glProgram->setUniformLocationWithMatrix4fv(mvp, &m[0], 1);
+	}
 
 	GLuint colorLocation = glProgram->getUniformLocation("u_color");
 	Color4F color(1, 1, 1, 1);
